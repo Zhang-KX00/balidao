@@ -246,7 +246,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('img/安图恩.jpg') center/cover no-repeat;
+    /* 背景图片通过JavaScript懒加载 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: -2;
 }
 
@@ -1804,4 +1807,109 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-light);
+}
+
+/* ============================================
+   图片加载优化
+   ============================================ */
+
+/* 图片懒加载占位符 */
+.image-loading-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(26, 26, 46, 0.8) 0%,
+        rgba(50, 50, 80, 0.8) 50%,
+        rgba(26, 26, 46, 0.8) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* 图片加载完成后隐藏占位符 */
+.lazy-image.loaded + .image-loading-placeholder {
+    opacity: 0;
+}
+
+/* 骨架屏动画 */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* 图片渐入效果 */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* 低优先级背景图片 */
+.hero-bg {
+    background-image: none;
+}
+
+.hero-bg.loaded {
+    background-image: url('img/安图恩.jpg');
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 图片加载失败样式 */
+.lazy-image.error {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+/* 图片加载指示器 */
+.image-loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 215, 0, 0.2);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* 响应式图片优化 */
+@media (max-width: 768px) {
+    /* 移动端减少动画以提升性能 */
+    .image-loading-placeholder {
+        animation-duration: 2s;
+    }
 }

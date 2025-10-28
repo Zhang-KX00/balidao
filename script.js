@@ -1,4 +1,86 @@
 // ============================================
+// 图片懒加载系统
+// ============================================
+class LazyLoadImages {
+    constructor() {
+        this.images = document.querySelectorAll('.lazy-image');
+        this.heroBg = document.querySelector('.hero-bg');
+        this.init();
+    }
+    
+    init() {
+        // 立即加载Hero背景图（关键资源）
+        this.loadHeroBackground();
+        
+        // 懒加载其他图片
+        this.setupLazyLoad();
+    }
+    
+    loadHeroBackground() {
+        if (!this.heroBg) return;
+        
+        // 创建一个临时图片来预加载
+        const tempImg = new Image();
+        tempImg.onload = () => {
+            this.heroBg.style.backgroundImage = "url('img/安图恩.jpg')";
+            this.heroBg.classList.add('loaded');
+        };
+        tempImg.onerror = () => {
+            console.warn('Hero背景图片加载失败');
+        };
+        tempImg.src = 'img/安图恩.jpg';
+    }
+    
+    setupLazyLoad() {
+        // 使用Intersection Observer API进行懒加载
+        const options = {
+            root: null,
+            rootMargin: '50px',
+            threshold: 0.01
+        };
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    this.loadImage(img);
+                    observer.unobserve(img);
+                }
+            });
+        }, options);
+        
+        this.images.forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    loadImage(img) {
+        const src = img.getAttribute('src');
+        if (!src) return;
+        
+        // 创建临时图片检测加载状态
+        const tempImg = new Image();
+        
+        tempImg.onload = () => {
+            img.classList.add('loaded');
+            setTimeout(() => {
+                const placeholder = img.nextElementSibling;
+                if (placeholder && placeholder.classList.contains('image-loading-placeholder')) {
+                    placeholder.style.opacity = '0';
+                }
+            }, 100);
+        };
+        
+        tempImg.onerror = () => {
+            img.classList.add('error');
+            console.warn(`图片加载失败: ${src}`);
+        };
+        
+        tempImg.src = src;
+    }
+}
+
+// ============================================
 // 粒子背景系统
 // ============================================
 class ParticleSystem {
@@ -629,6 +711,9 @@ function throttle(func, wait) {
 // 初始化所有功能
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    // 初始化图片懒加载（最高优先级）
+    const lazyLoad = new LazyLoadImages();
+    
     // 初始化粒子系统
     const particles = new ParticleSystem('particles-canvas');
     
@@ -664,6 +749,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
     
     console.log('🎮 巴黎岛工会官网已加载完成！');
+    console.log('✅ 图片懒加载已启用');
 });
 
 // ============================================

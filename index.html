@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>巴黎岛工会 - DNF手游顶级公会</title>
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="img/dnf手游图标.png" as="image">
+    <link rel="preload" href="img/安图恩.jpg" as="image">
+    <link rel="preload" href="style.css" as="style">
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,7 +22,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="img/dnf手游图标.png" alt="巴黎岛工会">
+                <img src="img/dnf手游图标.png" alt="巴黎岛工会" loading="eager">
                 <span class="logo-text">
                     <span class="logo-main">巴黎岛工会</span>
                     <span class="logo-sub">Paris Island Guild</span>
@@ -170,7 +176,8 @@
                                 <span>会长</span>
                             </div>
                             <div class="member-image">
-                                <img src="img/温柔.png" alt="温柔·刀影">
+                                <img src="img/温柔.png" alt="温柔·刀影" loading="lazy" class="lazy-image">
+                                <div class="image-loading-placeholder"></div>
                                 <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
@@ -208,7 +215,8 @@
                                 <span>副会长</span>
                             </div>
                             <div class="member-image">
-                                <img src="img/刀下取腰.png" alt="刀下取腰">
+                                <img src="img/刀下取腰.png" alt="刀下取腰" loading="lazy" class="lazy-image">
+                                <div class="image-loading-placeholder"></div>
                                 <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
@@ -246,7 +254,8 @@
                                 <span>副会长</span>
                             </div>
                             <div class="member-image">
-                                <img src="img/桃花.png" alt="策划组他亲爸">
+                                <img src="img/桃花.png" alt="策划组他亲爸" loading="lazy" class="lazy-image">
+                                <div class="image-loading-placeholder"></div>
                                 <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
@@ -284,7 +293,8 @@
                                 <span>核心成员</span>
                             </div>
                             <div class="member-image">
-                                <img src="img/战争.png" alt="战争世界·大将军">
+                                <img src="img/战争.png" alt="战争世界·大将军" loading="lazy" class="lazy-image">
+                                <div class="image-loading-placeholder"></div>
                                 <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
@@ -578,7 +588,7 @@
                     </div>
                     <div class="news-date">
                         <i class="far fa-calendar"></i>
-                        2024/10/28
+                        2025/10/28
                     </div>
                     <h3 class="news-title">
                         <i class="fas fa-trophy"></i>
@@ -597,7 +607,7 @@
                 <div class="news-card">
                     <div class="news-date">
                         <i class="far fa-calendar"></i>
-                        2024/10/26
+                        2025/10/26
                     </div>
                     <h3 class="news-title">
                         <i class="fas fa-user-plus"></i>
@@ -615,7 +625,7 @@
                 <div class="news-card">
                     <div class="news-date">
                         <i class="far fa-calendar"></i>
-                        2024/10/24
+                        2025/10/24
                     </div>
                     <h3 class="news-title">
                         <i class="fas fa-medal"></i>
@@ -633,7 +643,7 @@
                 <div class="news-card">
                     <div class="news-date">
                         <i class="far fa-calendar"></i>
-                        2024/10/22
+                        2025/10/22
                     </div>
                     <h3 class="news-title">
                         <i class="fas fa-scroll"></i>
@@ -658,7 +668,7 @@
             <div class="footer-content">
                 <div class="footer-section footer-main">
                     <div class="footer-logo">
-                        <img src="img/dnf手游图标.png" alt="巴黎岛工会">
+                        <img src="img/dnf手游图标.png" alt="巴黎岛工会" loading="lazy">
                         <span class="footer-logo-text">巴黎岛工会</span>
                     </div>
                     <p class="footer-description">
@@ -715,7 +725,7 @@
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
                 <p>&copy; 2024 巴黎岛工会 Paris Island Guild. All rights reserved.</p>
-                <p class="footer-note">游戏内容版权归 DNF手游 所有</p>
+                <p class="footer-note">游戏内容版权归 DNF巴黎岛工会手游 所有</p>
             </div>
         </div>
     </footer>
