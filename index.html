@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>巴黎岛工会 - DNF手游官方工会</title>
+    <title>巴黎岛工会 - DNF手游顶级公会</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- 粒子背景画布 -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="img/dnf手游图标.png">
-                <span>巴黎岛工会</span>
+                <img src="img/dnf手游图标.png" alt="巴黎岛工会">
+                <span class="logo-text">
+                    <span class="logo-main">巴黎岛工会</span>
+                    <span class="logo-sub">Paris Island Guild</span>
+                </span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">首页</a></li>
-                <li><a href="#members" class="nav-link">成员展示</a></li>
-                <li><a href="#power" class="nav-link">巅峰战力</a></li>
-                <li><a href="#news" class="nav-link">工会公告</a></li>
-                <li><a href="#contact" class="nav-link">联系我们</a></li>
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="#members" class="nav-link"><i class="fas fa-users"></i> 成员</a></li>
+                <li><a href="#power" class="nav-link"><i class="fas fa-trophy"></i> 战力</a></li>
+                <li><a href="#stats" class="nav-link"><i class="fas fa-chart-line"></i> 数据</a></li>
+                <li><a href="#news" class="nav-link"><i class="fas fa-bullhorn"></i> 公告</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -33,140 +39,286 @@
 
     <!-- 首页Hero区域 -->
     <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <!-- 动态光效 -->
+        <div class="light-effects">
+            <div class="light-beam light-beam-1"></div>
+            <div class="light-beam light-beam-2"></div>
+            <div class="light-beam light-beam-3"></div>
+        </div>
+        
         <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-main">
+                <div class="hero-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>DNF手游 顶级公会</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="title-main">巴黎岛工会</span>
-                    <span class="title-sub">DNF手游顶级公会</span>
+                    <span class="title-main" data-text="巴黎岛工会">巴黎岛工会</span>
+                    <span class="title-sub">Paris Island Guild · 传奇征程</span>
                 </h1>
                 <p class="hero-description">
-                    欢迎来到巴黎岛工会！我们是DNF手游中最具实力的工会之一，
-                    拥有强大的成员阵容和丰富的游戏经验。加入我们，一起征战阿拉德大陆！
+                    在阿拉德大陆的征途中，我们携手并进，铸就辉煌。<br>
+                    巴黎岛工会，汇聚最强战力，共创DNF传奇！
                 </p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">
-                        <i class="fas fa-users"></i>
-                        申请加入
+                        <i class="fas fa-rocket"></i>
+                        <span>申请加入</span>
+                        <div class="btn-glow"></div>
                     </button>
                     <button class="btn btn-secondary">
-                        <i class="fas fa-trophy"></i>
-                        查看战力
+                        <i class="fas fa-crown"></i>
+                        <span>战力排行</span>
                     </button>
                 </div>
+                
+                <!-- 实时数据展示 -->
+                <div class="hero-live-stats">
+                    <div class="live-stat-item">
+                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-label">在线成员</div>
+                            <div class="stat-number" data-count="35">0</div>
+                        </div>
+                    </div>
+                    <div class="live-stat-item">
+                        <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-label">今日活跃</div>
+                            <div class="stat-number" data-count="42">0</div>
+                        </div>
+                    </div>
+                    <div class="live-stat-item">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-label">公会排名</div>
+                            <div class="stat-number" data-count="8">0</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">活跃成员</div>
+            
+            <div class="hero-stats-cards">
+                <div class="stat-card" data-aos="fade-left">
+                    <div class="stat-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-number">50+</div>
+                        <div class="stat-card-label">精英成员</div>
+                    </div>
+                    <div class="stat-card-glow"></div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">200万+</div>
-                    <div class="stat-label">总战力</div>
+                
+                <div class="stat-card" data-aos="fade-left" data-aos-delay="100">
+                    <div class="stat-card-icon">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-number">500万+</div>
+                        <div class="stat-card-label">总战力</div>
+                    </div>
+                    <div class="stat-card-glow"></div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">TOP10</div>
-                    <div class="stat-label">服务器排名</div>
+                
+                <div class="stat-card" data-aos="fade-left" data-aos-delay="200">
+                    <div class="stat-card-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-number">TOP8</div>
+                        <div class="stat-card-label">服务器排名</div>
+                    </div>
+                    <div class="stat-card-glow"></div>
                 </div>
             </div>
         </div>
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
+        
+        <!-- 滚动提示 -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">向下探索</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
     </section>
 
     <!-- 成员展示轮播区域 -->
     <section id="members" class="members-section">
+        <div class="section-bg-pattern"></div>
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-star"></i>
-                巴黎岛巅峰战力榜
-            </h2>
+            <div class="section-header">
+                <div class="section-label">ELITE MEMBERS</div>
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-star"></i></span>
+                    巴黎岛巅峰战力榜
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">我们的精英成员，实力与荣耀的象征</p>
+            </div>
+            
             <div class="banner-container">
                 <div class="banner-wrapper">
                     <div class="banner-slide active">
                         <div class="member-card">
+                            <div class="member-card-glow"></div>
+                            <div class="member-rank">
+                                <i class="fas fa-crown"></i>
+                                <span>会长</span>
+                            </div>
                             <div class="member-image">
                                 <img src="img/温柔.png" alt="温柔·刀影">
+                                <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
-                                <h3>温柔·刀影</h3>
-                                <p class="member-role">会长</p>
+                                <h3 class="member-name">温柔·刀影</h3>
+                                <p class="member-role">斩夜</p>
                                 <div class="member-stats">
                                     <div class="stat">
-                                        <span class="stat-label">战力</span>
-                                        <span class="stat-value">102,743</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 95%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">战力</span>
+                                            <span class="stat-value">102,743</span>
+                                        </div>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-label">等级</span>
-                                        <span class="stat-value">70</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 100%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">等级</span>
+                                            <span class="stat-value">70</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="banner-slide">
                         <div class="member-card">
+                            <div class="member-card-glow"></div>
+                            <div class="member-rank rank-vice">
+                                <i class="fas fa-star"></i>
+                                <span>副会长</span>
+                            </div>
                             <div class="member-image">
                                 <img src="img/刀下取腰.png" alt="刀下取腰">
+                                <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
-                                <h3>刀下取哏</h3>
-                                <p class="member-role">副会长</p>
+                                <h3 class="member-name">刀下取哏</h3>
+                                <p class="member-role">弑魂</p>
                                 <div class="member-stats">
                                     <div class="stat">
-                                        <span class="stat-label">战力</span>
-                                        <span class="stat-value">91,227</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 85%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">战力</span>
+                                            <span class="stat-value">91,227</span>
+                                        </div>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-label">等级</span>
-                                        <span class="stat-value">70</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 100%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">等级</span>
+                                            <span class="stat-value">70</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="banner-slide">
                         <div class="member-card">
+                            <div class="member-card-glow"></div>
+                            <div class="member-rank rank-vice">
+                                <i class="fas fa-star"></i>
+                                <span>副会长</span>
+                            </div>
                             <div class="member-image">
                                 <img src="img/桃花.png" alt="策划组他亲爸">
+                                <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
-                                <h3>策划组他亲爸</h3>
-                                <p class="member-role">副会长</p>
+                                <h3 class="member-name">策划组他亲爸</h3>
+                                <p class="member-role">暗狱战狂</p>
                                 <div class="member-stats">
                                     <div class="stat">
-                                        <span class="stat-label">战力</span>
-                                        <span class="stat-value">99,383</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 92%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">战力</span>
+                                            <span class="stat-value">99,383</span>
+                                        </div>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-label">等级</span>
-                                        <span class="stat-value">70</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 100%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">等级</span>
+                                            <span class="stat-value">70</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="banner-slide">
                         <div class="member-card">
+                            <div class="member-card-glow"></div>
+                            <div class="member-rank rank-core">
+                                <i class="fas fa-gem"></i>
+                                <span>核心成员</span>
+                            </div>
                             <div class="member-image">
                                 <img src="img/战争.png" alt="战争世界·大将军">
+                                <div class="member-image-overlay"></div>
                             </div>
                             <div class="member-info">
-                                <h3>战争世界·大将军</h3>
-                                <p class="member-role">核心成员</p>
+                                <h3 class="member-name">战争世界·大将军</h3>
+                                <p class="member-role">大将军</p>
                                 <div class="member-stats">
                                     <div class="stat">
-                                        <span class="stat-label">战力</span>
-                                        <span class="stat-value">101,583</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 94%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">战力</span>
+                                            <span class="stat-value">101,583</span>
+                                        </div>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-label">等级</span>
-                                        <span class="stat-value">70</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-bar-fill" style="width: 100%"></div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">等级</span>
+                                            <span class="stat-value">70</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 轮播控制 -->
+                <button class="banner-nav banner-nav-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="banner-nav banner-nav-next"><i class="fas fa-chevron-right"></i></button>
+                
                 <div class="banner-dots">
                     <span class="dot active" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
@@ -177,53 +329,227 @@
         </div>
     </section>
 
-    <!-- 巅峰战力展示区域 -->
+    <!-- 战力排行榜区域 -->
     <section id="power" class="power-section">
+        <div class="section-bg-pattern"></div>
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-crown"></i>
-                巅峰战力榜
-            </h2>
+            <div class="section-header">
+                <div class="section-label">POWER RANKING</div>
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-crown"></i></span>
+                    巅峰战力排行
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">实力至上，荣耀为王</p>
+            </div>
+            
             <div class="power-grid">
-                <div class="power-card champion">
-                    <div class="rank-badge">
+                <div class="power-card champion" data-rank="1">
+                    <div class="power-card-bg"></div>
+                    <div class="rank-badge champion-badge">
+                        <div class="rank-badge-glow"></div>
                         <i class="fas fa-trophy"></i>
-                        <span>冠军</span>
+                        <span class="rank-number">1</span>
                     </div>
                     <div class="power-info">
-                        <h3>温柔·刀影</h3>
-                        <p class="power-value">102,743</p>
-                        <p class="power-class">斩夜</p>
+                        <h3 class="power-name">温柔·刀影</h3>
+                        <p class="power-class">
+                            <i class="fas fa-swords"></i>
+                            斩夜
+                        </p>
+                        <div class="power-value-container">
+                            <div class="power-label">战力值</div>
+                            <div class="power-value">102,743</div>
+                            <div class="power-bar">
+                                <div class="power-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="champion-crown">
+                        <i class="fas fa-crown"></i>
                     </div>
                 </div>
-                <div class="power-card">
-                    <div class="rank-badge second">
-                        <span>2</span>
+                
+                <div class="power-card" data-rank="2">
+                    <div class="power-card-bg"></div>
+                    <div class="rank-badge second-badge">
+                        <div class="rank-badge-glow"></div>
+                        <span class="rank-number">2</span>
                     </div>
                     <div class="power-info">
-                        <h3>策划组他亲爸</h3>
-                        <p class="power-value">99,383</p>
-                        <p class="power-class">暗狱战狂</p>
+                        <h3 class="power-name">策划组他亲爸</h3>
+                        <p class="power-class">
+                            <i class="fas fa-axe-battle"></i>
+                            暗狱战狂
+                        </p>
+                        <div class="power-value-container">
+                            <div class="power-label">战力值</div>
+                            <div class="power-value">99,383</div>
+                            <div class="power-bar">
+                                <div class="power-bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="power-card">
-                    <div class="rank-badge third">
-                        <span>3</span>
+                
+                <div class="power-card" data-rank="3">
+                    <div class="power-card-bg"></div>
+                    <div class="rank-badge third-badge">
+                        <div class="rank-badge-glow"></div>
+                        <span class="rank-number">3</span>
                     </div>
                     <div class="power-info">
-                        <h3>刀下取腰</h3>
-                        <p class="power-value">91,227</p>
-                        <p class="power-class">弑魂</p>
+                        <h3 class="power-name">刀下取哏</h3>
+                        <p class="power-class">
+                            <i class="fas fa-fist-raised"></i>
+                            弑魂
+                        </p>
+                        <div class="power-value-container">
+                            <div class="power-label">战力值</div>
+                            <div class="power-value">91,227</div>
+                            <div class="power-bar">
+                                <div class="power-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="power-card">
+                
+                <div class="power-card" data-rank="4">
+                    <div class="power-card-bg"></div>
                     <div class="rank-badge">
-                        <span>4</span>
+                        <div class="rank-badge-glow"></div>
+                        <span class="rank-number">4</span>
                     </div>
                     <div class="power-info">
-                        <h3>战争世界·大将军</h3>
-                        <p class="power-value">101,583</p>
-                        <p class="power-class">大将军</p>
+                        <h3 class="power-name">战争世界·大将军</h3>
+                        <p class="power-class">
+                            <i class="fas fa-shield"></i>
+                            大将军
+                        </p>
+                        <div class="power-value-container">
+                            <div class="power-label">战力值</div>
+                            <div class="power-value">101,583</div>
+                            <div class="power-bar">
+                                <div class="power-bar-fill" style="width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工会数据统计区域 -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">GUILD STATISTICS</div>
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-chart-line"></i></span>
+                    工会数据统计
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">数据见证我们的成长</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-box-content">
+                        <div class="stat-box-number" data-target="52">0</div>
+                        <div class="stat-box-label">总成员数</div>
+                        <div class="stat-box-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+8 本周</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-box-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-box-content">
+                        <div class="stat-box-number" data-target="500">0</div>
+                        <div class="stat-box-label">万总战力</div>
+                        <div class="stat-box-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+25万 本周</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-box-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-box-content">
+                        <div class="stat-box-number" data-target="168">0</div>
+                        <div class="stat-box-label">团本通关次数</div>
+                        <div class="stat-box-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+42 本周</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-box-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="stat-box-content">
+                        <div class="stat-box-number" data-target="8">0</div>
+                        <div class="stat-box-label">服务器排名</div>
+                        <div class="stat-box-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>↑2 本周</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-chart">
+                <h3 class="chart-title">
+                    <i class="fas fa-chart-bar"></i>
+                    本周活跃度
+                </h3>
+                <div class="chart-bars">
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 75%"></div>
+                        <div class="bar-label">周一</div>
+                        <div class="bar-value">75%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 82%"></div>
+                        <div class="bar-label">周二</div>
+                        <div class="bar-value">82%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 68%"></div>
+                        <div class="bar-label">周三</div>
+                        <div class="bar-value">68%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 90%"></div>
+                        <div class="bar-label">周四</div>
+                        <div class="bar-value">90%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 95%"></div>
+                        <div class="bar-label">周五</div>
+                        <div class="bar-value">95%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 100%"></div>
+                        <div class="bar-label">周六</div>
+                        <div class="bar-value">100%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="height: 88%"></div>
+                        <div class="bar-label">周日</div>
+                        <div class="bar-value">88%</div>
                     </div>
                 </div>
             </div>
@@ -232,35 +558,94 @@
 
     <!-- 工会公告区域 -->
     <section id="news" class="news-section">
+        <div class="section-bg-pattern"></div>
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-bullhorn"></i>
-                工会公告
-            </h2>
+            <div class="section-header">
+                <div class="section-label">GUILD ANNOUNCEMENTS</div>
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-bullhorn"></i></span>
+                    工会公告
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">最新动态与重要通知</p>
+            </div>
+            
             <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-date">2025/10/28</div>
-                    <h3>工会团本活动通知</h3>
-                    <p>本周工会团本活动将于周六晚上8点开始，请各位成员准时参加。活动将有丰厚的奖励等着大家！</p>
-                    <div class="news-tag important">重要</div>
+                <div class="news-card featured">
+                    <div class="news-badge">
+                        <i class="fas fa-star"></i>
+                        <span>置顶</span>
+                    </div>
+                    <div class="news-date">
+                        <i class="far fa-calendar"></i>
+                        2024/10/28
+                    </div>
+                    <h3 class="news-title">
+                        <i class="fas fa-trophy"></i>
+                        工会团本活动通知
+                    </h3>
+                    <p class="news-content">
+                        本周工会团本活动将于周六晚上8点开始，请各位成员准时参加。
+                        活动将有丰厚的奖励等着大家！所有满级成员必须参加。
+                    </p>
+                    <div class="news-tags">
+                        <span class="tag tag-important">重要</span>
+                        <span class="tag tag-activity">活动</span>
+                    </div>
                 </div>
+                
                 <div class="news-card">
-                    <div class="news-date">2025/10/26</div>
-                    <h3>新成员招募中</h3>
-                    <p>工会正在招募新成员，要求等级60以上，战力30000以上。有意向的勇士请联系会长或副会长。</p>
-                    <div class="news-tag recruit">招募</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar"></i>
+                        2024/10/26
+                    </div>
+                    <h3 class="news-title">
+                        <i class="fas fa-user-plus"></i>
+                        新成员招募中
+                    </h3>
+                    <p class="news-content">
+                        工会正在招募新成员，要求等级60以上，战力30000以上。
+                        有意向的勇士请联系会长或副会长。
+                    </p>
+                    <div class="news-tags">
+                        <span class="tag tag-recruit">招募</span>
+                    </div>
                 </div>
+                
                 <div class="news-card">
-                    <div class="news-date">2025/10/24</div>
-                    <h3>工会战力突破200万</h3>
-                    <p>恭喜巴黎岛工会总战力突破200万大关！感谢各位成员的努力，让我们继续朝着更高的目标前进！</p>
-                    <div class="news-tag achievement">成就</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar"></i>
+                        2024/10/24
+                    </div>
+                    <h3 class="news-title">
+                        <i class="fas fa-medal"></i>
+                        工会战力突破500万
+                    </h3>
+                    <p class="news-content">
+                        恭喜巴黎岛工会总战力突破500万大关！感谢各位成员的努力，
+                        让我们继续朝着更高的目标前进！
+                    </p>
+                    <div class="news-tags">
+                        <span class="tag tag-achievement">成就</span>
+                    </div>
                 </div>
+                
                 <div class="news-card">
-                    <div class="news-date">2025/10/22</div>
-                    <h3>工会规章制度更新</h3>
-                    <p>为了更好地管理工会，现对工会规章制度进行更新。请各位成员仔细阅读新的规章制度。</p>
-                    <div class="news-tag notice">公告</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar"></i>
+                        2024/10/22
+                    </div>
+                    <h3 class="news-title">
+                        <i class="fas fa-scroll"></i>
+                        工会规章制度更新
+                    </h3>
+                    <p class="news-content">
+                        为了更好地管理工会，现对工会规章制度进行更新。
+                        请各位成员仔细阅读新的规章制度。
+                    </p>
+                    <div class="news-tags">
+                        <span class="tag tag-notice">公告</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -268,38 +653,77 @@
 
     <!-- 页脚 -->
     <footer class="footer">
+        <div class="footer-glow"></div>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>巴黎岛工会</h3>
-                    <p>DNF手游顶级公会，欢迎各路勇士加入！</p>
+                <div class="footer-section footer-main">
+                    <div class="footer-logo">
+                        <img src="img/dnf手游图标.png" alt="巴黎岛工会">
+                        <span class="footer-logo-text">巴黎岛工会</span>
+                    </div>
+                    <p class="footer-description">
+                        DNF手游顶级公会，汇聚最强战力。<br>
+                        在阿拉德大陆书写传奇！
+                    </p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                        <a href="#"><i class="fab fa-weixin"></i></a>
-                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-qq"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-bilibili"></i>
+                        </a>
                     </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>快速链接</h4>
-                    <ul>
+                    <h4 class="footer-title">快速导航</h4>
+                    <ul class="footer-links">
                         <li><a href="#home">首页</a></li>
                         <li><a href="#members">成员展示</a></li>
-                        <li><a href="#power">巅峰战力</a></li>
+                        <li><a href="#power">战力排行</a></li>
+                        <li><a href="#stats">数据统计</a></li>
                         <li><a href="#news">工会公告</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>联系我们</h4>
-                    <p><i class="fas fa-gamepad"></i> 游戏服务器：贤者之戒</p>
-                    <p><i class="fab fa-qq"></i> QQ群：待完善</p>
-                    <p><i class="fas fa-user"></i> 会长QQ：待完善</p>
+                    <h4 class="footer-title">工会信息</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-server"></i> 服务器：贤者之戒</li>
+                        <li><i class="fas fa-users"></i> 成员数：141人</li>
+                        <li><i class="fas fa-trophy"></i> 排名：TOP 8</li>
+                        <li><i class="fas fa-fire"></i> 战力：500万+</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">联系我们</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-qq"></i> QQ群：待完善</li>
+                        <li><i class="fas fa-user"></i> 会长QQ：待完善</li>
+                        <li><i class="far fa-envelope"></i> 邮箱：待完善</li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 巴黎岛工会. All rights reserved.</p>
+                <div class="footer-divider"></div>
+                <p>&copy; 2024 巴黎岛工会 Paris Island Guild. All rights reserved.</p>
+                <p class="footer-note">游戏内容版权归 DNF手游 所有</p>
             </div>
         </div>
     </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
