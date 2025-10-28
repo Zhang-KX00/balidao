@@ -708,6 +708,58 @@ function throttle(func, wait) {
 }
 
 // ============================================
+// 微信二维码弹窗
+// ============================================
+class QRCodeModal {
+    constructor() {
+        this.modal = document.getElementById('qrcodeModal');
+        this.joinBtn = document.getElementById('joinBtn');
+        this.closeBtn = document.getElementById('closeModal');
+        this.init();
+    }
+    
+    init() {
+        if (!this.modal || !this.joinBtn) return;
+        
+        // 点击申请加入按钮
+        this.joinBtn.addEventListener('click', () => {
+            this.show();
+        });
+        
+        // 点击关闭按钮
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', () => {
+                this.hide();
+            });
+        }
+        
+        // 点击遮罩层关闭
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.hide();
+            }
+        });
+        
+        // ESC键关闭
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modal.classList.contains('show')) {
+                this.hide();
+            }
+        });
+    }
+    
+    show() {
+        this.modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // 防止背景滚动
+    }
+    
+    hide() {
+        this.modal.classList.remove('show');
+        document.body.style.overflow = ''; // 恢复滚动
+    }
+}
+
+// ============================================
 // 初始化所有功能
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -741,6 +793,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初始化视差效果
     const parallax = new ParallaxEffect();
     
+    // 初始化二维码弹窗
+    const qrcodeModal = new QRCodeModal();
+    
     // 页面加载动画
     document.body.style.opacity = '0';
     setTimeout(() => {
@@ -750,6 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('🎮 巴黎岛工会官网已加载完成！');
     console.log('✅ 图片懒加载已启用');
+    console.log('✅ 微信二维码弹窗已就绪');
 });
 
 // ============================================

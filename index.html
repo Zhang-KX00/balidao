@@ -72,12 +72,12 @@
                     巴黎岛工会，汇聚最强战力，共创DNF传奇！
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" id="joinBtn">
                         <i class="fas fa-rocket"></i>
                         <span>申请加入</span>
                         <div class="btn-glow"></div>
                     </button>
-                    <button class="btn btn-secondary">
+                    <button class="btn btn-secondary" onclick="document.getElementById('power').scrollIntoView({behavior: 'smooth'})">
                         <i class="fas fa-crown"></i>
                         <span>战力排行</span>
                     </button>
@@ -734,6 +734,52 @@
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- 微信二维码弹窗 -->
+    <div class="modal-overlay" id="qrcodeModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-icon">
+                        <i class="fab fa-weixin"></i>
+                    </div>
+                    <h2 class="modal-title">申请加入巴黎岛工会</h2>
+                    <p class="modal-subtitle">扫描二维码添加会长微信</p>
+                </div>
+                <div class="modal-body">
+                    <div class="qrcode-container">
+                        <img src="img/温柔二维码.png" alt="微信二维码" class="qrcode-image">
+                        <div class="qrcode-glow"></div>
+                    </div>
+                    <div class="modal-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span>会长：温柔</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-server"></i>
+                            <span>服务器：贤者之戒</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>要求：等级70+ 战力80000+</span>
+                        </div>
+                    </div>
+                    <div class="modal-tips">
+                        <div class="tip-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="tip-text">
+                            <p>添加时请备注：<span class="highlight">申请入会 + 游戏昵称</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
