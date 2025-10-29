@@ -819,3 +819,21 @@ document.addEventListener('visibilitychange', () => {
         console.log('页面已显示，恢复动画');
     }
 });
+
+// ============================================
+// 安图恩队伍折叠/展开功能
+// ============================================
+function toggleTeam(header) {
+    const content = header.nextElementSibling;
+    const isActive = header.classList.contains('active');
+    
+    if (isActive) {
+        // 折叠
+        header.classList.remove('active');
+        content.classList.remove('active');
+    } else {
+        // 展开
+        header.classList.add('active');
+        content.classList.add('active');
+    }
+}

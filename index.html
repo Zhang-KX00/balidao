@@ -520,48 +520,692 @@
                 </div>
             </div>
             
-            <div class="activity-chart">
+            <!-- 安图恩总标题 -->
+            <div class="anton-teams-header">
                 <h3 class="chart-title">
-                    <i class="fas fa-chart-bar"></i>
-                    本周活跃度
+                    <i class="fas fa-shield-alt"></i>
+                    本周安图恩普通·抗磨带队名单
                 </h3>
-                <div class="chart-bars">
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 75%"></div>
-                        <div class="bar-label">周一</div>
-                        <div class="bar-value">75%</div>
+                
+                <!-- 副本信息 -->
+                <div class="anton-info">
+                    <div class="anton-info-item">
+                        <i class="fas fa-users"></i>
+                        <span>12人团本</span>
                     </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 82%"></div>
-                        <div class="bar-label">周二</div>
-                        <div class="bar-value">82%</div>
+                    <div class="anton-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>时刻关注VX：巴黎岛DNF</span>
                     </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 68%"></div>
-                        <div class="bar-label">周三</div>
-                        <div class="bar-value">68%</div>
-                    </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 90%"></div>
-                        <div class="bar-label">周四</div>
-                        <div class="bar-value">90%</div>
-                    </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 95%"></div>
-                        <div class="bar-label">周五</div>
-                        <div class="bar-value">95%</div>
-                    </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 100%"></div>
-                        <div class="bar-label">周六</div>
-                        <div class="bar-value">100%</div>
-                    </div>
-                    <div class="chart-bar">
-                        <div class="bar-fill" style="height: 88%"></div>
-                        <div class="bar-label">周日</div>
-                        <div class="bar-value">88%</div>
+                    <div class="anton-info-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>战力要求: 无限制</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- 队伍1 - 温柔·刀影 -->
+            <div class="anton-team-accordion">
+                <div class="team-header active" onclick="toggleTeam(this)">
+                    <div class="team-header-left">
+                        <div class="team-leader-avatar">
+                            <i class="fas fa-user-shield"></i>
+                            <div class="leader-rank">1</div>
+                        </div>
+                        <div class="team-leader-info">
+                            <h4 class="team-leader-name">温柔·刀影</h4>
+                            <div class="team-leader-stats">
+                                <span class="team-leader-power">
+                                    <i class="fas fa-bolt"></i>
+                                    102,743
+                                </span>
+                                <span class="team-leader-role">
+                                    <i class="fas fa-sword"></i>
+                                    刀影
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-header-right">
+                        <span class="team-member-count">
+                            <i class="fas fa-users"></i>
+                            12人队伍
+                        </span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="team-content active">
+                    <!-- 12人队伍成员 -->
+                <div class="anton-team-grid">
+                    <div class="team-member">
+                        <div class="member-position">1</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">战争世界·大将军</div>
+                            <div class="member-power">101,583</div>
+                            <div class="member-class">
+                                <i class="fas fa-fist-raised"></i>
+                                大将军
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">2</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">策划组他亲爸</div>
+                            <div class="member-power">99,383</div>
+                            <div class="member-class">
+                                <i class="fas fa-magic"></i>
+                                暗狱战狂
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">3</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">刀下取腰</div>
+                            <div class="member-power">91,227</div>
+                            <div class="member-class">
+                                <i class="fas fa-bolt"></i>
+                                弑魂
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">4</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">桃花依旧笑</div>
+                            <div class="member-power">89,456</div>
+                            <div class="member-class">
+                                <i class="fas fa-star"></i>
+                                奶妈
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">5</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">夜雨声烦</div>
+                            <div class="member-power">88,234</div>
+                            <div class="member-class">
+                                <i class="fas fa-fire"></i>
+                                红眼
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">6</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">冰封之心</div>
+                            <div class="member-power">87,892</div>
+                            <div class="member-class">
+                                <i class="fas fa-snowflake"></i>
+                                冰洁
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">7</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">暗影刺客</div>
+                            <div class="member-power">86,543</div>
+                            <div class="member-class">
+                                <i class="fas fa-user-ninja"></i>
+                                刺客
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">8</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">圣光守护</div>
+                            <div class="member-power">86,123</div>
+                            <div class="member-class">
+                                <i class="fas fa-cross"></i>
+                                奶爸
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">9</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">枪炮玫瑰</div>
+                            <div class="member-power">85,987</div>
+                            <div class="member-class">
+                                <i class="fas fa-crosshairs"></i>
+                                枪炮师
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">10</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">剑刃风暴</div>
+                            <div class="member-power">85,432</div>
+                            <div class="member-class">
+                                <i class="fas fa-wind"></i>
+                                剑宗
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">11</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">魔法少女</div>
+                            <div class="member-power">85,089</div>
+                            <div class="member-class">
+                                <i class="fas fa-hat-wizard"></i>
+                                元素师
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-position">12</div>
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">召唤之王</div>
+                            <div class="member-power">84,765</div>
+                            <div class="member-class">
+                                <i class="fas fa-paw"></i>
+                                召唤师
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 队伍2 - 战争世界·大将军 -->
+            <div class="anton-team-accordion">
+                <div class="team-header" onclick="toggleTeam(this)">
+                    <div class="team-header-left">
+                        <div class="team-leader-avatar">
+                            <i class="fas fa-user-shield"></i>
+                            <div class="leader-rank">2</div>
+                        </div>
+                        <div class="team-leader-info">
+                            <h4 class="team-leader-name">战争世界·大将军</h4>
+                            <div class="team-leader-stats">
+                                <span class="team-leader-power">
+                                    <i class="fas fa-bolt"></i>
+                                    101,583
+                                </span>
+                                <span class="team-leader-role">
+                                    <i class="fas fa-fist-raised"></i>
+                                    大将军
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-header-right">
+                        <span class="team-member-count">
+                            <i class="fas fa-users"></i>
+                            12人队伍
+                        </span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="team-content">
+                    <div class="anton-team-grid">
+                        <div class="team-member">
+                            <div class="member-position">1</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字1</div>
+                                <div class="member-power">98,000</div>
+                                <div class="member-class"><i class="fas fa-magic"></i>鬼泣</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">2</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字2</div>
+                                <div class="member-power">96,500</div>
+                                <div class="member-class"><i class="fas fa-bolt"></i>剑魂</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">3</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字3</div>
+                                <div class="member-power">95,200</div>
+                                <div class="member-class"><i class="fas fa-fire"></i>红眼</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">4</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字4</div>
+                                <div class="member-power">94,800</div>
+                                <div class="member-class"><i class="fas fa-star"></i>奶妈</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">5</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字5</div>
+                                <div class="member-power">93,400</div>
+                                <div class="member-class"><i class="fas fa-snowflake"></i>冰洁</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">6</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字6</div>
+                                <div class="member-power">92,100</div>
+                                <div class="member-class"><i class="fas fa-user-ninja"></i>刺客</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">7</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字7</div>
+                                <div class="member-power">91,600</div>
+                                <div class="member-class"><i class="fas fa-cross"></i>奶爸</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">8</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字8</div>
+                                <div class="member-power">90,200</div>
+                                <div class="member-class"><i class="fas fa-crosshairs"></i>枪炮师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">9</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字9</div>
+                                <div class="member-power">89,800</div>
+                                <div class="member-class"><i class="fas fa-wind"></i>剑宗</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">10</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字10</div>
+                                <div class="member-power">88,900</div>
+                                <div class="member-class"><i class="fas fa-hat-wizard"></i>元素师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">11</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字11</div>
+                                <div class="member-power">87,500</div>
+                                <div class="member-class"><i class="fas fa-paw"></i>召唤师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">12</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字12</div>
+                                <div class="member-power">86,300</div>
+                                <div class="member-class"><i class="fas fa-shield-alt"></i>守护者</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 队伍3 - 策划组他亲爸 -->
+            <div class="anton-team-accordion">
+                <div class="team-header" onclick="toggleTeam(this)">
+                    <div class="team-header-left">
+                        <div class="team-leader-avatar">
+                            <i class="fas fa-user-shield"></i>
+                            <div class="leader-rank">3</div>
+                        </div>
+                        <div class="team-leader-info">
+                            <h4 class="team-leader-name">策划组他亲爸</h4>
+                            <div class="team-leader-stats">
+                                <span class="team-leader-power">
+                                    <i class="fas fa-bolt"></i>
+                                    99,383
+                                </span>
+                                <span class="team-leader-role">
+                                    <i class="fas fa-magic"></i>
+                                    暗狱战狂
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-header-right">
+                        <span class="team-member-count">
+                            <i class="fas fa-users"></i>
+                            12人队伍
+                        </span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="team-content">
+                    <div class="anton-team-grid">
+                        <div class="team-member">
+                            <div class="member-position">1</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字1</div>
+                                <div class="member-power">97,200</div>
+                                <div class="member-class"><i class="fas fa-bolt"></i>剑魂</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">2</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字2</div>
+                                <div class="member-power">95,800</div>
+                                <div class="member-class"><i class="fas fa-fire"></i>红眼</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">3</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字3</div>
+                                <div class="member-power">94,300</div>
+                                <div class="member-class"><i class="fas fa-fist-raised"></i>狂战士</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">4</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字4</div>
+                                <div class="member-power">93,100</div>
+                                <div class="member-class"><i class="fas fa-star"></i>奶妈</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">5</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字5</div>
+                                <div class="member-power">91,900</div>
+                                <div class="member-class"><i class="fas fa-snowflake"></i>冰洁</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">6</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字6</div>
+                                <div class="member-power">90,700</div>
+                                <div class="member-class"><i class="fas fa-cross"></i>奶爸</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">7</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字7</div>
+                                <div class="member-power">89,400</div>
+                                <div class="member-class"><i class="fas fa-user-ninja"></i>刺客</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">8</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字8</div>
+                                <div class="member-power">88,200</div>
+                                <div class="member-class"><i class="fas fa-crosshairs"></i>枪炮师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">9</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字9</div>
+                                <div class="member-power">87,100</div>
+                                <div class="member-class"><i class="fas fa-wind"></i>剑宗</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">10</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字10</div>
+                                <div class="member-power">86,500</div>
+                                <div class="member-class"><i class="fas fa-hat-wizard"></i>元素师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">11</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字11</div>
+                                <div class="member-power">85,300</div>
+                                <div class="member-class"><i class="fas fa-paw"></i>召唤师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">12</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字12</div>
+                                <div class="member-power">84,100</div>
+                                <div class="member-class"><i class="fas fa-shield-alt"></i>守护者</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 队伍4 - 刀下取腰 -->
+            <div class="anton-team-accordion">
+                <div class="team-header" onclick="toggleTeam(this)">
+                    <div class="team-header-left">
+                        <div class="team-leader-avatar">
+                            <i class="fas fa-user-shield"></i>
+                            <div class="leader-rank">4</div>
+                        </div>
+                        <div class="team-leader-info">
+                            <h4 class="team-leader-name">刀下取腰</h4>
+                            <div class="team-leader-stats">
+                                <span class="team-leader-power">
+                                    <i class="fas fa-bolt"></i>
+                                    91,227
+                                </span>
+                                <span class="team-leader-role">
+                                    <i class="fas fa-bolt"></i>
+                                    弑魂
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-header-right">
+                        <span class="team-member-count">
+                            <i class="fas fa-users"></i>
+                            12人队伍
+                        </span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="team-content">
+                    <div class="anton-team-grid">
+                        <div class="team-member">
+                            <div class="member-position">1</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字1</div>
+                                <div class="member-power">89,500</div>
+                                <div class="member-class"><i class="fas fa-magic"></i>鬼泣</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">2</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字2</div>
+                                <div class="member-power">88,200</div>
+                                <div class="member-class"><i class="fas fa-fire"></i>红眼</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">3</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字3</div>
+                                <div class="member-power">87,100</div>
+                                <div class="member-class"><i class="fas fa-fist-raised"></i>狂战士</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">4</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字4</div>
+                                <div class="member-power">86,400</div>
+                                <div class="member-class"><i class="fas fa-star"></i>奶妈</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">5</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字5</div>
+                                <div class="member-power">85,600</div>
+                                <div class="member-class"><i class="fas fa-cross"></i>奶爸</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">6</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字6</div>
+                                <div class="member-power">84,300</div>
+                                <div class="member-class"><i class="fas fa-snowflake"></i>冰洁</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">7</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字7</div>
+                                <div class="member-power">83,100</div>
+                                <div class="member-class"><i class="fas fa-user-ninja"></i>刺客</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">8</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字8</div>
+                                <div class="member-power">82,500</div>
+                                <div class="member-class"><i class="fas fa-crosshairs"></i>枪炮师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">9</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字9</div>
+                                <div class="member-power">81,800</div>
+                                <div class="member-class"><i class="fas fa-wind"></i>剑宗</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">10</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字10</div>
+                                <div class="member-power">80,900</div>
+                                <div class="member-class"><i class="fas fa-hat-wizard"></i>元素师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">11</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字11</div>
+                                <div class="member-power">80,200</div>
+                                <div class="member-class"><i class="fas fa-paw"></i>召唤师</div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-position">12</div>
+                            <div class="member-avatar"><i class="fas fa-user"></i></div>
+                            <div class="member-info">
+                                <div class="member-name">队员名字12</div>
+                                <div class="member-power">79,500</div>
+                                <div class="member-class"><i class="fas fa-shield-alt"></i>守护者</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 队伍5 - 桃花依旧笑 -->
+            
+
+            <!-- 队伍6 - 夜雨声烦 -->
+            
+
+            <!-- 报名提示 -->
+            <div class="anton-tips">
+                <i class="fas fa-info-circle"></i>
+                <span>想站甲板参加安图恩团本？请联系队长温柔报名，战力要求：无</span>
             </div>
         </div>
     </section>
